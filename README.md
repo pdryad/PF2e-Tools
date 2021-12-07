@@ -10,4 +10,7 @@ A set of tools for learning to use ASP.Net. These tools are designed for aiding 
       <li>Dice Roller (Basic Functionality of randomly generating dice numbers, with plans to further implement combining with randomly rolled data for towns, npcs, and other information)</li>
 </ol>
 
-<h3>To-Do List</h3>
+<h3>To-Do List(From Creation of Github)</h3>
+-[]Stylize homepage
+-[]Rearrange placement and style of links
+-[]Trade Goods SQL Database (Can be connected to Currency database?)
