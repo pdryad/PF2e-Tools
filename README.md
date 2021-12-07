@@ -4,6 +4,8 @@ A set of tools for learning to use ASP.Net. These tools are designed for aiding 
 <h3>Current Projects:</h3>
 
 <ol>
-      <li>Currency Converter (Experimenting with converting various forms of fantasy currency, loosely based on historical examples)</li>
+      <li>Currency Converter (Experimenting with converting various forms of fantasy currency, loosely based on historical examples. Connected to an SQL Database for all currencies and their values.)</li>
       <li>Dice Roller (Basic Functionality of randomly generating dice numbers, with plans to further implement combining with randomly rolled data for towns, npcs, and other information)</li>
 </ol>
+
+<h2>To-Do List</h2>
