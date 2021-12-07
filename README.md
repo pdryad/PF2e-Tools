@@ -12,5 +12,5 @@ A set of tools for learning to use ASP.Net. These tools are designed for aiding 
 
 ### To-Do List(From Creation of Github)
 - [ ] Stylize homepage
-Rearrange placement and style of links
-Trade Goods SQL Database (Can be connected to Currency database?)
+- [ ] Rearrange placement and style of links
+- [ ] Trade Goods SQL Database (Can be connected to Currency database?)
