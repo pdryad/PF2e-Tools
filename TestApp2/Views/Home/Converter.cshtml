@@ -1,0 +1,39 @@
+﻿@model ConverterModel
+@{
+    //Defines the tab name for the page//
+    ViewData["Title"] = "PF2e Converter";
+}
+
+<div class="currency-header">
+    <h1>PF2e Currency Converter</h1>
+</div>
+<div class="currency-container">
+    <div class="row">
+        <div class="standardField coin-field-container">
+            @*preceding text before fill lines*@
+            <label for="coinCount"></label>
+            @*numerical input field for # of coins*@
+            <input class="NumberInput inputField" type="number" id="coinCount" name="coinCount" min="1">
+        </div>
+        <div class="standardField">
+            @*<label for="currencyType">Pick Currency Type</label>*@
+            <select class="inputField" name="currencyType" id="currencyType">
+                @for (int i = 0; i < Model.Currencylist.Count; i++)
+                {
+                    <option data-abv="@Model.Currencylist[i].CurrencyAbv" value="@Model.Currencylist[i].AbsoluteValue">@Model.Currencylist[i].Name</option>
+                }
+            </select>
+            @*Below is for the currency conversion button, the i class is referencing the icon design.*@
+            <button class="baseButton" type="button" id="convertButton"><i class="fas fa-exchange-alt"></i></button>
+            @*<label for="currencyTypeInto">textgoeshere</label>*@
+            <select class="inputField" name="currencyTypeInto" id="currencyTypeInto">
+                @for (int i = 0; i < Model.Currencylist.Count; i++)
+                {
+                    <option data-abv="@Model.Currencylist[i].CurrencyAbv" value="@Model.Currencylist[i].AbsoluteValue">@Model.Currencylist[i].Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div id="currencyOutput" class="outputClass">
+    </div>
+</div>

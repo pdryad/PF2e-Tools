@@ -1,0 +1,22 @@
+﻿@model DiceModel
+@{
+    //Defines the tab name for the page//
+    ViewData["Title"] = "Dice Roller";
+}
+
+<div class="currency-header">
+    <h1>Dice Rollers</h1>
+    <div class="row">
+        <div class="standardField coin-field-container">
+            @*preceding text before fill lines*@
+            <label for="rollerText">"Roll here"</label>
+            @*numerical input field for # of coins*@
+            <input class="NumberInput inputField" type="number" id="rollerText" name="rollerText" min="1">
+        </div>
+        <div class="standardField">
+            @*<label for=""></label>*@
+            <select class="inputField" name="" id="">
+            </select>
+        </div>
+    </div>
+</div>

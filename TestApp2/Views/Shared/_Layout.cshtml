@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PF2e Tools</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="StyleSheet" href="~/css/StyleSheet.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    @*Below USED to refer to the fontawesome website where Icons are found to use for buttons and stuff.*@
+    @*now saved as a local .js file in computer alongside other .js files in project*@
+    <script src="~/js/convertbutton.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black box-shadow mb-3">
+            <div class="container">
+                @*<a class="link-color" asp-area="" asp-controller="Home" asp-action="PF2ehomepage">Home</a>*@
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item link-spacer">
+                            <a class="link-color" asp-area="" asp-controller="Home" asp-action="PF2ehomepage">Home</a>
+                        </li>
+                        <li class="nav-item link-spacer">
+                            <a class="link-color" asp-area="" asp-controller="Home" asp-action="Converter">Coin Converter</a>
+                        </li>
+                        <li class="nav-item link-spacer">
+                            <a class="link-color" asp-area="" asp-controller="Home" asp-action="Diceroller">Dice Roller</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container link-color link-footer">
+            <a asp-area="" asp-controller="Home" asp-action="PF2ehomepage">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Converter">Coin Converter</a>
+            <a asp-area="" asp-controller="Home" asp-action="Diceroller">Dice Roller</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Gremlins.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
