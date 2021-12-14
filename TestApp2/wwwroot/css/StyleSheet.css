@@ -29,7 +29,7 @@ body {
 }
 
 /*for centering the entire currency converter & stylizing it in a single box?*/
-.currency-container {
+.standard-container {
     /*margin: auto automatically adds space to even everything out.*/
     border-radius: 10px;
     margin: auto;
@@ -40,7 +40,7 @@ body {
     border: 1px solid;
 }
 
-.currency-header {
+.standardcontent-header {
     margin: auto;
     text-align: center;
     border-radius: 10px;

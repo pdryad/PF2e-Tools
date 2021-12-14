@@ -18,6 +18,7 @@ namespace TestApp2.Models
         }
 
         public virtual DbSet<CurrencyType> CurrencyTypes { get; set; }
+        public virtual DbSet<Tradegood> Tradegoods { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,6 +44,15 @@ namespace TestApp2.Models
                     .HasColumnName("CurrencyABV");
 
                 entity.Property(e => e.Name).IsRequired();
+            });
+
+            modelBuilder.Entity<Tradegood>(entity =>
+            {
+                entity.ToTable("tradegood");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.CulturalValue).HasColumnName("Cultural_Value");
             });
 
             OnModelCreatingPartial(modelBuilder);

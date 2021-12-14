@@ -6,7 +6,7 @@ namespace TestApp2.Models
     public class ConverterModel
     {
         public string information { get; set; }
-        public List<CurrencyType> Currencylist { get; set; }
+        public List<CurrencyType> currencyList { get; set; }
     }
     //Outdated Currency Data list for non-Database currency listings for converter.
     //public class CurrencyData
@@ -15,6 +15,11 @@ namespace TestApp2.Models
     //    public decimal absoluteValue { get; set; }
     //    public string currencyABV { get; set; }
     //}
+
+    public class TradegoodsModel
+    {
+        public List<Tradegood> goodsList { get; set; }
+    }
 
     public class DiceModel 
     {}

@@ -29,6 +29,9 @@
                             <a class="link-color" asp-area="" asp-controller="Home" asp-action="Converter">Coin Converter</a>
                         </li>
                         <li class="nav-item link-spacer">
+                            <a class="link-color" asp-area="" asp-controller="Home" asp-action="Tradegoodstable">Trade Goods</a>
+                        </li>
+                        <li class="nav-item link-spacer">
                             <a class="link-color" asp-area="" asp-controller="Home" asp-action="Diceroller">Dice Roller</a>
                         </li>
                     </ul>
@@ -46,6 +49,7 @@
         <div class="container link-color link-footer">
             <a asp-area="" asp-controller="Home" asp-action="PF2ehomepage">Home</a>
             <a asp-area="" asp-controller="Home" asp-action="Converter">Coin Converter</a>
+            <a asp-area="" asp-controller="Home" asp-action="Tradegoodstable">Trade Goods</a>
             <a asp-area="" asp-controller="Home" asp-action="Diceroller">Dice Roller</a>
         </div>
     </footer>
@@ -53,6 +57,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/Gremlins.js" asp-append-version="true"></script>
+    <script src="~/js/tradegoods.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

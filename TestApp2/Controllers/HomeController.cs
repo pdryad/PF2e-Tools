@@ -16,6 +16,7 @@ namespace TestApp2.Controllers
      * dice roller. random generation lists.
      * Trade Goods Database & Dropdown comparing to currencies for values? needs names at top of tables as the column titles. export the html tables to js and then in to database?
      * Add ability to add/remove from CurrencyType Database Table visually
+     * clean up code & comment
      */
     public class HomeController : Controller
     {
@@ -34,14 +35,6 @@ namespace TestApp2.Controllers
             //CurrencyTypes.Add(new CurrencyData { Name = "Old-Barlan Shill", absoluteValue = 0.02m, currencyABV = "(OBS)" });
             //CurrencyTypes.Add(new CurrencyData { Name = "Bone Token", absoluteValue = 0.05m, currencyABV = "(Bo)" });
 
-            using(var context = new TestDbContext())
-            {
-                //Displays the ENTIRE CurrencyType database. Don't worry, it's supposed to be pluralized here even though it's not on the other thing eeeeeeeeeee
-                CurrencyTypes = context.CurrencyTypes.OrderBy(x => x.Order).ToList();
-                //.OrderBy(x => x.AbsoluteValue) orders the list by worth
-                //.Orderby, .Tolist are Linq. A way of programming in most languages. A way to filter lists/select specific things in a list in to another list
-            }
-
 
 
             _logger = logger;
@@ -53,7 +46,26 @@ namespace TestApp2.Controllers
         }
         public IActionResult Converter()
         {
-            return View(new ConverterModel {information = "Test",Currencylist = CurrencyTypes });
+            using (var context = new TestDbContext())
+            {
+                //Displays the ENTIRE CurrencyType database. Don't worry, it's supposed to be pluralized here even though it's not on the other thing eeeeeeeeeee
+                CurrencyTypes = context.CurrencyTypes.OrderBy(x => x.Order).ToList();
+                //.OrderBy(x => x.AbsoluteValue) orders the list by worth
+                //.Orderby, .Tolist are Linq. A way of programming in most languages. A way to filter lists/select specific things in a list in to another list
+            }
+            return View(new ConverterModel {information = "Test",currencyList = CurrencyTypes });
+        }
+
+        public IActionResult Tradegoodstable()
+        {
+            TradegoodsModel model = new TradegoodsModel();
+
+            using (var context = new TestDbContext())
+            {
+                //Displays the ENTIRE Tradegoods database. No order put.
+                model.goodsList = context.Tradegoods.ToList();
+            }
+            return View(model);
         }
 
         public IActionResult Diceroller()

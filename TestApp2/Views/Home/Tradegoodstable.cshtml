@@ -1,0 +1,24 @@
+﻿@model TradegoodsModel
+@{
+    //Defines the tab name for the page//
+    ViewData["Title"] = "PF2e Tradegoods";
+}
+
+<div class="standardcontent-header">
+    <h1>PF2e Trade Goods Table</h1>
+</div>
+<div class="standard-container">
+    <div class="row">
+        <div class="standardField">
+            <label for="selectedTradegood">Select Goods</label>
+            <select class="inputField" name="selectedTradegood" id="selectedTradegood">
+                @for (int i = 0; i < Model.goodsList.Count; i++)
+                {
+                    <option value="@Model.goodsList[i].Id">@Model.goodsList[i].Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div id="trade" class="outputClass" style="height:300px;">
+    </div>
+</div>

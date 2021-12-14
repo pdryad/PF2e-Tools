@@ -13,7 +13,8 @@ $("#currencyType option").each(function () {
     currencies.push(newCurrency);
 });
 
-console.log(currencies);
+//for debug purposes, will show up in every page when you f12 and check console
+/*console.log(currencies);*/
 
 
 //function resizeInput() {
