@@ -11,11 +11,12 @@ namespace TestApp2.Controllers
 {
     /*
      * Todo:
-     * make a new folder with a controller for all of the content separate from the HomeController & home folder
-     * do everything I did with the coin converter to pf2ehomepage STYLE MORE OH GWWWWAWWWWFFDFFDDD
-     * dice roller. random generation lists.
+     * do everything I did with the coin converter to pf2ehomepage STYLE MORE OH GWWWWAWWWWFFDFFDDd
+     * add all table elements to tradegoods.js and tradegoodstable.cshtml to display all database text to page
+     * add a dropdown for currencyType in tradegoods page to display price in currency amount, abbreviation, etc.
      * Trade Goods Database & Dropdown comparing to currencies for values? needs names at top of tables as the column titles. export the html tables to js and then in to database?
      * Add ability to add/remove from CurrencyType Database Table visually
+     * dice roller. random generation lists.
      * clean up code & comment
      */
     public class HomeController : Controller
@@ -66,6 +67,17 @@ namespace TestApp2.Controllers
                 model.goodsList = context.Tradegoods.ToList();
             }
             return View(model);
+        }
+
+        public JsonResult RetrieveTradeGood(int ID)
+        {
+            Tradegood foundgood = new Tradegood();
+            using (var context = new TestDbContext())
+            {
+                foundgood = context.Tradegoods.Where(x => x.Id == ID).FirstOrDefault();
+            }
+
+            return Json(foundgood);
         }
 
         public IActionResult Diceroller()
