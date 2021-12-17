@@ -16,6 +16,7 @@ namespace TestApp2.Controllers
      * add a dropdown for currencyType in tradegoods page to display price in currency amount, abbreviation, etc.
      * Trade Goods Database & Dropdown comparing to currencies for values? needs names at top of tables as the column titles. export the html tables to js and then in to database?
      * Add ability to add/remove from CurrencyType Database Table visually
+     * Get one other table in to the database. <- Requested by D. (Job Lists)
      * dice roller. random generation lists.
      * clean up code & comment
      */
